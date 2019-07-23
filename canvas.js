@@ -1,4 +1,4 @@
-var c = document.getElementById("canvas");
+var c = document.getElementById("canvasBackground");
 var ctx = c.getContext("2d");
 
 function resize() {
