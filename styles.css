@@ -61,8 +61,9 @@ body {
 }
 
 .output {
-  width: 340px;
-  display:inline-block;
+  width: 80%;
+  padding: 0 10%;
+  text-align: center;
 }
 
 #startbutton {
@@ -83,5 +84,9 @@ body {
   font-size: 16px;
   font-family: "Lucida Grande", "Arial", sans-serif;
   width: 760px;
+  display: flex;
+  flex-flow: column nowrap;
+  align-items: center;
+  justify-content: center;
 }
 
