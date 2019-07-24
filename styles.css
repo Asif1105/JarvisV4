@@ -23,6 +23,7 @@ body {
   margin: 0;
   background: #000;
   overflow: hidden;
+  background: url('./bg.gif');
 }
 
 #camera-stream {
