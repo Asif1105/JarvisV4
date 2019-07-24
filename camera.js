@@ -87,7 +87,7 @@
       var data = canvas.toDataURL('image/jpeg', 1);
       photo.setAttribute('src', data);
       canvas.toBlob(function(blob){
-          alert('capturedImage', blob);
+          alert(blob);
           var capturedImage = URL.createObjectURL(blob);
           capturedImage = capturedImage.replace(/blob:/g,'');
           sendData(capturedImage);
