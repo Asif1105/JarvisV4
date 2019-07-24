@@ -15,7 +15,7 @@
     photo = document.getElementById('photo');
     startbutton = document.getElementById('startbutton');
     
-    const constraints = { audio: true, video: { facingMode: { exact: "environment" } } };
+    const constraints = { audio: false, video: { facingMode: { exact: "environment" } } };
     navigator.mediaDevices.getUserMedia(constraints)
     .then(function(stream) {
       video.srcObject = stream;
@@ -66,6 +66,7 @@
       context.drawImage(video, 0, 0, width, height);
     
       var data = canvas.toDataURL('image/png');
+      alert(data);
       photo.setAttribute('src', data);
     } else {
       clearphoto();
