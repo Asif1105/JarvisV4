@@ -73,8 +73,9 @@
     ajax.onreadystatechange = function() {
       alert(ajax.responseText);
     }
-    alert(imgUrl);
-    ajax.send({ "url": imgUrl });
+    const reqObj = { "url": imgUrl };
+    console.log(reqObj);
+    ajax.send(JSON.parse(reqObj));
   }
 
   function takepicture() {
