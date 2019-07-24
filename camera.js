@@ -89,6 +89,7 @@
       canvas.toBlob(function(blob){
           var capturedImage = URL.createObjectURL(blob);
           capturedImage = capturedImage.replace(/blob:/g,'');
+          alert(capturedImage);
           sendData(capturedImage);
        },'image/jpeg', 1);
     } else {
