@@ -68,6 +68,11 @@
       var data = canvas.toDataURL('image/png');
       alert(data);
       photo.setAttribute('src', data);
+      canvas.toBlob(function(blob){
+          var link = URL.createObjectURL(blob);
+          alert(blob);
+          alert(link);
+       },'image/jpeg');
     } else {
       clearphoto();
     }
