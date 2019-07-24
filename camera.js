@@ -74,9 +74,7 @@
       alert(ajax.responseText);
     }
     alert(imgUrl);
-    const reqObj = JSON.parse({ "url": imgUrl });
-    alert(JSON.stringify(reqObj));
-    ajax.send(reqObj);
+    ajax.send({ "url": imgUrl });
   }
 
   function takepicture() {
