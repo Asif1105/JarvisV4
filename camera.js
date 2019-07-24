@@ -88,7 +88,7 @@
       photo.setAttribute('src', data);
       canvas.toBlob(function(blob){
           var capturedImage = URL.createObjectURL(blob);
-          sendData(capturedImage);
+          sendData(data);
        },'image/jpeg', 1);
     } else {
       clearphoto();
