@@ -73,8 +73,8 @@
     ajax.onreadystatechange = function() {
       alert(ajax.responseText);
     }
-    alert(imgUrl);
-    ajax.send(JSON.parse({ 'url': imgUrl }));
+    alert(typeof imgUrl);
+    ajax.send(JSON.parse({ "url": imgUrl }));
   }
 
   function takepicture() {
@@ -89,7 +89,6 @@
       canvas.toBlob(function(blob){
           var capturedImage = URL.createObjectURL(blob);
           capturedImage = capturedImage.replace(/blob:/g,'');
-          alert(capturedImage);
           sendData(capturedImage);
        },'image/jpeg', 1);
     } else {
