@@ -17,8 +17,12 @@ width: 100%;
 height: 100%;		
 }
 */
+@font-face {
+  font-family: avengeance;
+  src: url('./av1.otf');
+}
 body {
-  font-family: "Benton Sans", "Helvetica Neue", helvetica, arial, sans-serif;
+  font-family: avengeance, sans-serif;
   padding: 0;
   margin: 0;
   background: #000;
@@ -84,7 +88,6 @@ body {
 
 .contentarea {
   font-size: 16px;
-  font-family: "Lucida Grande", "Arial", sans-serif;
   width: 100%;
   display: flex;
   flex-flow: column nowrap;
