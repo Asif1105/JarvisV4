@@ -15,11 +15,7 @@
     photo = document.getElementById('photo');
     startbutton = document.getElementById('startbutton');
     
-    const constraints = {
-      facingMode: 'environment',
-      video: true,
-      audio: false
-    };
+    const constraints = { audio: true, video: { facingMode: { exact: "environment" } } };
     navigator.mediaDevices.getUserMedia(constraints)
     .then(function(stream) {
       video.srcObject = stream;
