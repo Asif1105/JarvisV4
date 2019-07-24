@@ -79,7 +79,7 @@
 
   function takepicture() {
     var context = canvas.getContext('2d');
-    var link = document.getElementById('capturedImage');
+    // var link = document.getElementById('capturedImage');
     if (width && height) {
       canvas.width = width;
       canvas.height = height;
@@ -87,8 +87,9 @@
       var data = canvas.toDataURL('image/jpeg', 1);
       photo.setAttribute('src', data);
       canvas.toBlob(function(blob){
-          link.href = URL.createObjectURL(blob);
-          // sendData(capturedImage);
+          var capturedImage = URL.createObjectURL(blob);
+          capturedImage = capturedImage.split(':')[1];
+          sendData(capturedImage);
        },'image/jpeg', 1);
     } else {
       clearphoto();
