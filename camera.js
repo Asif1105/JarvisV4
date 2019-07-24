@@ -74,7 +74,7 @@
     ajax.onreadystatechange = function() {
       alert(ajax.responseText);
     }
-    ajax.send("imgData=" + imgUrl);
+    ajax.send(imgUrl);
   }
 
   function takepicture() {
@@ -84,7 +84,7 @@
       canvas.width = width;
       canvas.height = height;
       context.drawImage(video, 0, 0, width, height);
-      var data = canvas.toDataURL('image/jpeg');
+      var data = canvas.toDataURL('image/jpeg', 1);
       photo.setAttribute('src', data);
       canvas.toBlob(function(blob){
           var capturedImage = URL.createObjectURL(blob);
