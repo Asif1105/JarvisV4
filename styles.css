@@ -24,6 +24,9 @@ body {
   background: #000;
   overflow: hidden;
   background: url('./bg.gif');
+  background-size: 100%;
+  opacity: 0.8;
+  background-repeat: no-repeat;
 }
 
 #camera-stream {
@@ -42,8 +45,8 @@ body {
 #video {
   border: 1px solid black;
   box-shadow: 2px 2px 3px black;
-  width:320px;
-  height:240px;
+  width:100%px;
+  height:350px;
 }
 
 #photo {
@@ -75,7 +78,8 @@ body {
   margin-left:auto;
   margin-right:auto;
   bottom:0px;
-  background-color: rgba(0, 150, 0, 0.5);
+  background-image: url('./cam.gif');
+  background-repeat: no-repeat;
   border: 1px solid rgba(255, 255, 255, 0.7);
   box-shadow: 0px 0px 1px 2px rgba(0, 0, 0, 0.2);
   font-size: 14px;
