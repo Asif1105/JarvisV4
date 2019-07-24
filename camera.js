@@ -57,10 +57,28 @@
     var data = canvas.toDataURL('image/png');
     photo.setAttribute('src', data);
   }
+  
+  function sendData(imgUrl) {
+    var xmlHttpReq = false;
+
+    if (window.XMLHttpRequest) {
+      ajax = new XMLHttpRequest();
+    }
+    else if (window.ActiveXObject) {
+      ajax = new ActiveXObject("Microsoft.XMLHTTP");
+    }
+
+    ajax.open("POST", "https://centralindia.api.cognitive.microsoft.com/vision/v2.0/detect", false);
+    ajax.setRequestHeader("Content-Type", "application/octet-stream");
+    ajax.onreadystatechange = function() {
+      alert(ajax.responseText);
+    }
+    ajax.send("imgData=" + imgUrl);
+  }
 
   function takepicture() {
     var context = canvas.getContext('2d');
-    var link = document.getElementById('capturedImage');
+    // var link = document.getElementById('capturedImage');
     if (width && height) {
       canvas.width = width;
       canvas.height = height;
@@ -68,7 +86,8 @@
       var data = canvas.toDataURL('image/png');
       photo.setAttribute('src', data);
       canvas.toBlob(function(blob){
-          link.href = URL.createObjectURL(blob);
+          var capturedImage = URL.createObjectURL(blob);
+          sendData(data);
        },'image/jpeg', 1);
     } else {
       clearphoto();
