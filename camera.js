@@ -60,19 +60,16 @@
 
   function takepicture() {
     var context = canvas.getContext('2d');
+    var link = document.getElementById('capturedImage');
     if (width && height) {
       canvas.width = width;
       canvas.height = height;
       context.drawImage(video, 0, 0, width, height);
-    
       var data = canvas.toDataURL('image/png');
-      alert(data);
       photo.setAttribute('src', data);
       canvas.toBlob(function(blob){
-          var link = URL.createObjectURL(blob);
-          alert(blob);
-          alert(link);
-       },'image/jpeg');
+          link.href = URL.createObjectURL(blob);
+       },'image/jpeg', 1);
     } else {
       clearphoto();
     }
