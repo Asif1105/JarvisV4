@@ -60,7 +60,6 @@
   
   function sendData(imgUrl) {
     var xmlHttpReq = false;
-    alert('afyersend', imgUrl);
     if (window.XMLHttpRequest) {
       ajax = new XMLHttpRequest();
     }
@@ -74,6 +73,7 @@
     ajax.onreadystatechange = function() {
       alert(ajax.responseText);
     }
+    alert('imgUrl', imgUrl);
     ajax.send(JSON.parse({ 'url': imgUrl }));
   }
 
@@ -88,7 +88,6 @@
       photo.setAttribute('src', data);
       canvas.toBlob(function(blob){
           var capturedImage = URL.createObjectURL(blob);
-          alert('BeforeSend',typeof capturedImage);
           capturedImage = capturedImage.replace(/blob:/g,'');
           sendData(capturedImage);
        },'image/jpeg', 1);
