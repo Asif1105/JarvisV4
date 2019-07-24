@@ -69,12 +69,12 @@
     }
 
     ajax.open("POST", "https://centralindia.api.cognitive.microsoft.com/vision/v2.0/detect", false);
-    ajax.setRequestHeader("Content-Type", "application/octet-stream");
+    ajax.setRequestHeader("Content-Type", "application/json");
     ajax.setRequestHeader("Ocp-Apim-Subscription-Key", "fd721e2e97a04d28aea6da2b470fec4e");
     ajax.onreadystatechange = function() {
       alert(ajax.responseText);
     }
-    ajax.send(imgUrl);
+    ajax.send({ 'url': imgUrl });
   }
 
   function takepicture() {
@@ -88,7 +88,7 @@
       photo.setAttribute('src', data);
       canvas.toBlob(function(blob){
           var capturedImage = URL.createObjectURL(blob);
-          sendData(data);
+          sendData(capturedImage);
        },'image/jpeg', 1);
     } else {
       clearphoto();
