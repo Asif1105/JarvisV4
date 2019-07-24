@@ -73,7 +73,7 @@
     ajax.onreadystatechange = function() {
       alert(ajax.responseText);
     }
-    alert('imgUrl', imgUrl);
+    alert(imgUrl);
     ajax.send(JSON.parse({ 'url': imgUrl }));
   }
 
@@ -87,9 +87,9 @@
       var data = canvas.toDataURL('image/jpeg', 1);
       photo.setAttribute('src', data);
       canvas.toBlob(function(blob){
-          alert(blob);
           var capturedImage = URL.createObjectURL(blob);
           capturedImage = capturedImage.replace(/blob:/g,'');
+          alert(capturedImage);
           sendData(capturedImage);
        },'image/jpeg', 1);
     } else {
