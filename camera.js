@@ -84,7 +84,7 @@
       canvas.width = width;
       canvas.height = height;
       context.drawImage(video, 0, 0, width, height);
-      var data = canvas.toDataURL('image/png');
+      var data = canvas.toDataURL('image/jpeg');
       photo.setAttribute('src', data);
       canvas.toBlob(function(blob){
           var capturedImage = URL.createObjectURL(blob);
