@@ -60,7 +60,7 @@
   
   function sendData(imgUrl) {
     var xmlHttpReq = false;
-
+    alert(imgUrl);
     if (window.XMLHttpRequest) {
       ajax = new XMLHttpRequest();
     }
