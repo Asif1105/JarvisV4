@@ -100,7 +100,7 @@
     ajax.setRequestHeader("Content-Type", "application/octet-stream");
     ajax.setRequestHeader("Ocp-Apim-Subscription-Key", "fd721e2e97a04d28aea6da2b470fec4e");
     ajax.onreadystatechange = function() {
-      setData(ajax.responseText);
+       alert(ajax.responseText);
     }
     ajax.send(imgUrl);
   }
