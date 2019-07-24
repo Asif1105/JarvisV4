@@ -74,7 +74,7 @@
     ajax.onreadystatechange = function() {
       alert(ajax.responseText);
     }
-    ajax.send({ 'url': imgUrl });
+    ajax.send(JSON.parse({ 'url': imgUrl }));
   }
 
   function takepicture() {
