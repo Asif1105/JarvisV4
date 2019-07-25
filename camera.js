@@ -79,18 +79,20 @@
     photo.setAttribute('src', data);
   }
   
-  function setData(res){
-    const count = res.objects && res.objects.objects.length;
-    const objects = res.objects.objects;
+  function setData(response){
+    const res = JSON.parse(response);
+    const count = res.objects && res.objects.length;
+    const objects = res.objects;
     if(count > 0) {
-      var result = null;
+      var result = '';
+      document.getElementById('object').innerHTML = '';
       for(let i=0;i<count;i++){
-        result += objects[i]['object'] + (i !== count - 1) ? ',' : '';
+        result += objects[i]['object'] + ',';
       }
+      result = result.charAt(result.length - 1) === ',' ? result.substr(0, result.length - 1) : result;
       document.getElementById('object').innerHTML = result;
     } 
   }
-
   
   function sendData(imgUrl) {
     var xmlHttpReq = false;
