@@ -9,6 +9,13 @@
     <link rel="stylesheet" href="./assets/css/styles.css">
   </head>  
   <body>
+    <header class="header">
+      <h1>Disrobe Jarvis</h1>
+      <img id="jarvis" src="./assets/images/jarvis.png" style="
+          width: 100px;
+          height: 100px;
+      ">
+    </header>
     <div class="shutter open">
       <div></div>
       <div></div>
@@ -29,11 +36,18 @@
        <img id="photo" alt=""> 
      </div>
       <h2>Objects Detected: <span id="object" class="glitch" data-text=""></span></h2>
-      <img class="camera" src="./assets/images/cam.gif" id="startbutton" />
+      <img class="camera" src="./assets/images/cam.png" id="startbutton" />
      <!-- <a id="capturedImage" href="">Captured Image</a> -->
     </div>
     <script src="./assets/js/jquery.min.js"></script>
     <script src="./assets/js/shutter.js"></script>
     <script src="./assets/js/camera.js"></script>
+    <script>
+        $(function(){
+          $('#jarvis').on('click', function(){
+            window.location = 'index.html';
+          });
+        })
+    </script>
   </body>
 </html>

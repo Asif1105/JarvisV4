@@ -94,13 +94,41 @@ body {
   position: relative;
 }
 
-h2{
+h2, h1{
   color: white;
   text-shadow: 0 0 10px #fff, 0 0 20px #00d2ff, 0 0 30px #00d2ff, 0 0 40px #00d2ff, 0 0 50px #00d2ff, 0 0 60px #00d2ff, 0 0 70px #00d2ff;
   letter-spacing: 6px;
   font-size: 15px;
   text-align: center;
   line-height: 30px;
+}
+
+header{
+  justify-content: center;
+  display: flex;
+  align-items: center;
+  flex-flow: column nowrap;
+  position: absolute;
+  width: 100%;
+  z-index: 10;
+}
+
+
+img#jarvis {
+  -webkit-animation: mover 1s infinite  alternate;
+  animation: mover 1s infinite  alternate;
+}
+img#jarvis {
+    -webkit-animation: mover 1s infinite  alternate;
+    animation: mover 1s infinite  alternate;
+}
+@-webkit-keyframes mover {
+    0% { transform: translateY(0); }
+    100% { transform: translateY(-10px); }
+}
+@keyframes mover {
+    0% { transform: translateY(0); }
+    100% { transform: translateY(-10px); }
 }
 
   
