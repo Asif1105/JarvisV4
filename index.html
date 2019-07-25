@@ -1,39 +1,45 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <title>Hello!</title>
+    <title>Jarvis V4</title>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="./assets/css/shutter.css">
-    <link rel="stylesheet" href="./assets/css/styles.css">
+    <style>
+      @font-face {
+        font-family: avengeance;
+        src: url('./assets/fonts/av1.otf');
+      }
+      body{
+        margin: 0;
+        padding: 0;
+        font-family: avengeance, sans-serif;
+        min-height: 100%;
+        height: auto;
+      }
+      .main{
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+        width: 100vw;
+        height: 100vh;
+        position: relative;
+        background: url(./assets/images/ironman.gif);
+      }
+      h1{
+        position: absolute;
+        bottom: 20px;
+        color: white;
+        text-shadow: 0 0 10px #fff, 0 0 20px #00d2ff, 0 0 30px #00d2ff, 0 0 40px #00d2ff, 0 0 50px #00d2ff, 0 0 60px #00d2ff, 0 0 70px #00d2ff;
+        letter-spacing: 6px;
+        font-size: 15px;
+        text-align: center;
+        line-height: 30px;
+      }
+    </style>
   </head>  
   <body>
-    <div class="shutter open">
-      <div></div>
-      <div></div>
-      <div></div>
-      <div></div>
-      <div></div>
-      <div></div>
-      <div></div>
-      <div></div>
+    <div class="main">
     </div>
-    <audio id="audio" src="./assets/sounds/camera-shutter.mp3"></audio>
-    <div class="contentarea">
-     <div class="camera">
-       <video id="video">Video stream not available.</video>
-     </div>
-     <canvas id="canvas"></canvas>
-     <div class="output">
-       <img id="photo" alt=""> 
-     </div>
-      <h2>Objects Detected: <span id="object" class="glitch" data-text=""></span></h2>
-      <img class="camera" src="./assets/images/cam.gif" id="startbutton" />
-     <!-- <a id="capturedImage" href="">Captured Image</a> -->
-    </div>
-    <script src="./assets/js/jquery.min.js"></script>
-    <script src="./assets/js/shutter.js"></script>
-    <script src="./assets/js/camera.js"></script>
   </body>
 </html>
