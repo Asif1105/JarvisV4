@@ -28,7 +28,7 @@ body {
   background: #000;
   overflow: hidden;
   overflow-y: scroll;
-  background: url('../images/cam.gif');
+  background: url('../images/bg.gif');
   background-size: 100%;
   background-size: cover;
   height: 100%;
