@@ -1,5 +1,5 @@
 var shutter = document.querySelector('.shutter');
-var help = document.querySelector('.help');
+var camera = document.querySelector('.camera');
 var images = [];
 
 function snap() {
@@ -9,9 +9,4 @@ function snap() {
   },500);
 }
 
-shutter.addEventListener('click', snap);
-
-
-setTimeout(function() {
-  help.parentNode.removeChild(help);
-},5000);
+camera.addEventListener('click', snap);
