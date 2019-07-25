@@ -11,7 +11,19 @@
         font-family: avengeance;
         src: url('./assets/fonts/av1.otf');
       }
-      body{
+      body, html {
+        height: 100%;
+        margin: 0;
+        font-family: avengeance, sans-serif;
+      }
+      .bg {
+        background-image: url('./assets/images/bg2.png');
+        height: 100%;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+      }
+      /*body{
         margin: 0;
         padding: 0;
         font-family: avengeance, sans-serif;
@@ -22,7 +34,7 @@
         -moz-background-size: cover;
         -o-background-size: cover;
         background-size: cover;
-      }
+      }*/
       .main{
         display: flex;
         flex-flow: row nowrap;
@@ -101,6 +113,7 @@
     </style>
   </head>  
   <body>
+    <div class="bg">
     <div class="main">
         <h1 style="top: 10px;">Jarvis V4</h1>
         <svg id="suitUp" width="234px" height="340px" viewBox="-2 -2 236 342" version="1.1">
@@ -162,17 +175,18 @@
         height: 100px;
       ">
       <h1 class="simulate">Suit up Jarvis</h1>
-    </div>  
+    </div>
+    </div>
     <script>
-      $(function(){
-        $('.simulate').on('click', function(){
-          $('#suitUp').css('display', 'block');
-          setTimeout(function(){
-            window.location = 'camera.html';
-          },5000);
-        });
-       
-      })
-    </script>
+        $(function(){
+          $('.simulate').on('click', function(){
+            $('#suitUp').css('display', 'block');
+            setTimeout(function(){
+              window.location = 'camera.html';
+            },5000);
+          });
+         
+        })
+      </script>
   </body>
 </html>
