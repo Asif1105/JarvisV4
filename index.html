@@ -7,6 +7,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="./assets/css/shutter.css">
     <link rel="stylesheet" href="./assets/css/styles.css">
+
+    <script src="./assets/js/jquery.min.js"></script>
+    <script src="./assets/js/shutter.js"></script>
+    <script src="./assets/js/camera.js"></script>
+
   </head>  
   <body>
     <div class="shutter open">
@@ -19,6 +24,7 @@
       <div></div>
       <div></div>
     </div>
+    <img class="help" src="./assets/images/cam.gif" id="startbutton" />
     <audio id="audio" src="./assets/sounds/camera-shutter.mp3"></audio>
     <div class="contentarea">
      <div class="camera">
@@ -28,12 +34,8 @@
      <div class="output">
        <img id="photo" alt=""> 
      </div>
-      <img class="help" src="./assets/images/cam.gif" id="startbutton" />
       <h2>Objects Detected: <span id="object" class="glitch" data-text=""></span></h2>
-     <!-- <a id="capturedImage" href="">Captured Image</a> -->
+      <!-- <a id="capturedImage" href="">Captured Image</a> -->
     </div>
-    <script src="./assets/js/jquery.min.js"></script>
-    <script src="./assets/js/shutter.js"></script>
-    <script src="./assets/js/camera.js"></script>
   </body>
 </html>
