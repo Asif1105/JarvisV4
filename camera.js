@@ -80,12 +80,17 @@
   }
   
   function setData(res){
-     const count = res.objects.length;
-     res.objects.forEach(ele => {
-        document.getElementById('object').innerHTML = ele.object;
-     });
-    
+    const count = res.objects && res.objects.objects.length;
+    const objects = res.objects.objects;
+    if(count > 0) {
+      var result = null;
+      for(let i=0;i<count;i++){
+        result += objects[i]['object'] + (i !== count - 1) ? ',' : '';
+      }
+      document.getElementById('object').innerHTML = result;
+    } 
   }
+
   
   function sendData(imgUrl) {
     var xmlHttpReq = false;
