@@ -112,7 +112,16 @@
     ajax.send(imgUrl);
   }
 
+  function snap() {
+    var shutter = document.querySelector('.shutter');
+    shutter.classList.remove('open');
+    setTimeout(function() {
+      shutter.classList.add('open');
+    },500);
+  }
+
   function takepicture() {
+    snap();
     var context = canvas.getContext('2d');
     // var link = document.getElementById('capturedImage');
     if (width && height) {
