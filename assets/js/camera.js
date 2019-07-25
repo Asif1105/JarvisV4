@@ -120,6 +120,7 @@
       canvas.height = height;
       context.drawImage(video, 0, 0, width, height);
       var data = canvas.toDataURL('image/jpeg', 1);
+      $('#audio').play();
       photo.setAttribute('src', data);
       var blobData = createBlob(data);
       sendData(blobData);
