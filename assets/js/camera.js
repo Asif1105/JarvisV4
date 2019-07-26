@@ -78,6 +78,22 @@
     var data = canvas.toDataURL('image/png');
     photo.setAttribute('src', data);
   }
+
+  function textToSpeech(text){
+    if ('speechSynthesis' in window) {
+      var msg = new SpeechSynthesisUtterance();
+      var voices = window.speechSynthesis.getVoices();
+      msg.voice = voices[8];
+      msg.rate = 1;
+      msg.pitch = 1;
+      msg.text = text;
+
+      msg.onend = function(e) {
+        // console.log('Finished in ' + event.elapsedTime + ' seconds.');
+      };
+      speechSynthesis.speak(msg);
+   }
+  }
   
   function setData(response){
     const res = JSON.parse(response);
@@ -91,7 +107,7 @@
       }
       result = result.charAt(result.length - 1) === ',' ? result.substr(0, result.length - 1) : result;
       document.getElementById('object').innerHTML = result;
-      textToSpeech(result);
+      result ? textToSpeech('I found '+result) : textToSpeech("I don't find anything. Please let me suit up again");
     } 
   }
   
