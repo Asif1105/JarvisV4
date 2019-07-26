@@ -91,6 +91,7 @@
       }
       result = result.charAt(result.length - 1) === ',' ? result.substr(0, result.length - 1) : result;
       document.getElementById('object').innerHTML = result;
+      textToSpeech(result);
     } 
   }
   
