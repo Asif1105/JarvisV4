@@ -42,7 +42,7 @@
     }, false);
 
     startbutton.addEventListener('click', function(ev){
-      takepicture();
+      snap();
       ev.preventDefault();
     }, false);
     
@@ -114,22 +114,22 @@
 
   function snap() {
     var shutter = document.querySelector('.shutter');
+    // $('#audio').play();
     shutter.classList.remove('open');
     setTimeout(function() {
       shutter.classList.add('open');
+      takepicture();
     },500);
   }
 
   function takepicture() {
-    snap();
     var context = canvas.getContext('2d');
     // var link = document.getElementById('capturedImage');
-    if (width && height) {
+    if (width) {
       canvas.width = width;
       canvas.height = height;
       context.drawImage(video, 0, 0, width, height);
       var data = canvas.toDataURL('image/jpeg', 1);
-      $('#audio').play();
       photo.setAttribute('src', data);
       var blobData = createBlob(data);
       sendData(blobData);
@@ -145,4 +145,3 @@
   }
   window.addEventListener('load', startup, false);
 })();
-
