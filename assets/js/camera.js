@@ -88,9 +88,9 @@
       msg.pitch = 1;
       msg.text = text;
 
-      msg.onend = function(e) {
+      /*msg.onend = function(e) {
         // console.log('Finished in ' + event.elapsedTime + ' seconds.');
-      };
+      };*/
       speechSynthesis.speak(msg);
    }
   }
@@ -107,8 +107,10 @@
       }
       result = result.charAt(result.length - 1) === ',' ? result.substr(0, result.length - 1) : result;
       document.getElementById('object').innerHTML = result;
-      result ? textToSpeech('I found '+result) : textToSpeech("I don't find anything. Please let me suit up again");
-    } 
+      textToSpeech('I found '+result);
+    } else {
+      textToSpeech("I don't find anything. Please let me suit up again");
+    }
   }
   
   function sendData(imgUrl) {
